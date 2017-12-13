@@ -1,0 +1,32 @@
+{
+    "name": "mach3builders/ui",
+    "description": "Laravel package to use with mach3builders/ui",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Robbin Benard",
+            "email": "robbinbenard@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0"
+    },
+    "autoload": {
+        "psr-0": {
+            "Mach3builders\\Ui": "src/"
+        },
+        "files": [
+            "src/Mach3Builders/Ui/functions.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mach3builders\\Ui\\UiServiceProvider"
+            ],
+            "aliases": {
+                "Alert": "Mach3builders\\Ui\\Facades\\Alert"
+            }
+        }
+    }
+}
