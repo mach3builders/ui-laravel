@@ -10,10 +10,10 @@ class Alert
      * @var array
      */
     protected $type_icons = [
-        'success' => 'done',
-        'warning' => 'warning',
-        'info' => 'help_outline',
-        'danger' => 'error_outline',
+        'success' => 'check',
+        'warning' => 'exclamation-triangle',
+        'info' => 'info-circle',
+        'danger' => 'times',
     ];
 
     /**

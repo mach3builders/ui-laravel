@@ -8,7 +8,7 @@
         @endif
 
         @if (session()->has('alert.icon'))
-            <i class="ui-icon">{{ session('alert.icon') }}</i>
+            <i class="far fa-{{ session('alert.icon') }}"></i>
             <span>{!! session('alert.message') !!}</span>
         @else
             {!! session('alert.message') !!}
