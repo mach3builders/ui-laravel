@@ -1,7 +1,6 @@
 {
     "name": "mach3builders/ui",
     "description": "Laravel package to use with mach3builders/ui",
-    "version": "1.0.0",
     "authors": [
         {
             "name": "Robbin Benard",
@@ -25,7 +24,8 @@
                 "Mach3builders\\Ui\\UiServiceProvider"
             ],
             "aliases": {
-                "Alert": "Mach3builders\\Ui\\Facades\\Alert"
+                "Alert": "Mach3builders\\Ui\\Facades\\Alert",
+                "Notify": "Mach3builders\\Ui\\Facades\\Notify"
             }
         }
     }
