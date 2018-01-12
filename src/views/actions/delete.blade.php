@@ -2,10 +2,10 @@
     $id = str_random();
 @endphp
 <button 
-    class="btn btn-sm btn-icon btn-pill btn-outline-secondary" 
+    class="btn btn-transparent btn-pill btn-icon" 
     data-toggle="modal" 
     data-target="#example-{{ $id }}">
-    <i class="ui-icon">delete_forever</i>
+    <i class="far fa-trash-alt"></i>
 </button>
 <div class="modal fade" id="example-{{ $id }}">
     <div class="modal-dialog" role="document">
