@@ -1,7 +1,7 @@
 {
     "name": "mach3builders/ui",
     "description": "Laravel package to use with mach3builders/ui",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "authors": [
         {
             "name": "Robbin Benard",
