@@ -2,11 +2,12 @@
     $id = str_random();
 @endphp
 <button 
-    class="btn btn-transparent btn-pill btn-icon" 
+    class="btn btn-sm ui-btn-icon ui-btn-transparent" 
     data-toggle="modal" 
     data-target="#example-{{ $id }}">
     <i class="far fa-trash-alt"></i>
 </button>
+
 <div class="modal fade" id="example-{{ $id }}">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
