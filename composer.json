@@ -16,20 +16,20 @@
     },
     "autoload": {
         "psr-0": {
-            "Mach3Builders\\UI": "src/"
+            "Mach3builders\\Ui": "src/"
         },
         "files": [
-            "src/Mach3Builders/UI/helpers.php"
+            "src/Mach3builders/Ui/helpers.php"
         ]
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mach3Builders\\UI\\UiServiceProvider"
+                "Mach3builders\\Ui\\UiServiceProvider"
             ],
             "aliases": {
-                "Alert": "Mach3Builders\\UI\\Facades\\Alert",
-                "Notify": "Mach3Builders\\UI\\Facades\\Notify"
+                "Alert": "Mach3builders\\Ui\\Facades\\Alert",
+                "Notify": "Mach3builders\\Ui\\Facades\\Notify"
             }
         }
     }
