@@ -31,9 +31,9 @@ notify('message')->type('info');
 
 ## Components
 
-### Delete action
+### Table
 
-Create a delete button with a modal to confirm deletion.
+Creates a table for listing data.
 
 Slots:
 - **action**: The url where to send a DELETE request to upon confirmation
@@ -41,7 +41,21 @@ Slots:
 - **main**: Modal body
 
 ```php
-@component('ui::actions.delete', ['action' => "/update/{$id}"])
+@component('ui::table', ['data' => $data])
+@endcomponent
+```
+
+### Delete action
+
+Creates a delete button with a modal to confirm deletion.
+
+Slots:
+- **action**: The url where to send a DELETE request to upon confirmation
+- **title**: Modal title
+- **main**: Modal body
+
+```php
+@component('ui::actions.delete', ['action' => "/model/{$id}"])
     {!! trans('taxes.delete-body') !!}
 @endcomponent
 ```
