@@ -1,9 +1,9 @@
 <?php
 
-namespace Mach3builders\Ui;
+namespace Mach3Builders\UI;
 
-use Mach3builders\Ui\Alert\Alert;
-use Mach3builders\Ui\Notify\Notify;
+use Mach3Builders\UI\Alert\Alert;
+use Mach3Builders\UI\Notify\Notify;
 use Illuminate\Support\ServiceProvider;
 
 class UiServiceProvider extends ServiceProvider
@@ -38,8 +38,8 @@ class UiServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../../views', 'ui');
-        $this->loadTranslationsFrom(__DIR__.'/../../translations', 'ui');
+        $this->loadViewsFrom(__DIR__.'/../../views/components', 'ui');
+        $this->loadTranslationsFrom(__DIR__.'/../../lang', 'ui');
     }
 
     /**

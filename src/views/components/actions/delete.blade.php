@@ -4,11 +4,11 @@
 <button 
     class="btn btn-sm ui-btn-icon ui-btn-transparent" 
     data-toggle="modal" 
-    data-target="#example-{{ $id }}">
+    data-target="#modal-action-delete-{{ $id }}">
     <i class="far fa-trash-alt"></i>
 </button>
 
-<div class="modal fade" id="example-{{ $id }}">
+<div class="modal fade" id="modal-action-delete-{{ $id }}">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
@@ -32,7 +32,7 @@
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
                     <button type="submit" class="btn btn-success">
-                        {{ trans('ui::delete.delete') }}
+                        {{ trans('ui::delete.confirm') }}
                     </button>
                 </form>
             </div>

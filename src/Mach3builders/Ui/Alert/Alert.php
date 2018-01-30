@@ -1,6 +1,6 @@
 <?php
 
-namespace Mach3builders\Ui\Alert;
+namespace Mach3Builders\UI\Alert;
 
 class Alert
 {
@@ -18,11 +18,12 @@ class Alert
 
     /**
      * Set the alert message
-     * @param  string $message
      * 
+     * @param  string $message
+     * @param  string $type
      * @return Alert
      */
-    public function message($message, $type='info')
+    public function message($message, $type = 'info')
     {
         session()->flash('alert.message', $message);
         return $this->type($type);
@@ -31,6 +32,7 @@ class Alert
     /**
      * Set the type of alert
      *
+     * @param string $type
      * @return Alert
      */
     public function type($type)
