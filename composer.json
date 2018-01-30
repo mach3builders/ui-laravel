@@ -1,10 +1,14 @@
 {
     "name": "mach3builders/ui",
-    "description": "Laravel package to use with mach3builders/ui",
+    "description": "Laravel package to use with Mach3Builders' User Interface",
     "authors": [
         {
             "name": "Robbin Benard",
-            "email": "robbinbenard@gmail.com"
+            "email": "rbenard@mach3builders.nl"
+        },
+        {
+            "name": "Paul Kruijt",
+            "email": "pkruijt@mach3builders.nl"
         }
     ],
     "require": {

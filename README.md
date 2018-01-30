@@ -1,5 +1,5 @@
-# Mach3builders UI helpers
-This package contains little helper functions for the mach3builders user interface. see [ui.mach3builders.nl](http://ui.mach3builders.nl/) for more information.
+# Mach3Builders UI helpers
+This package contains little helper functions for the Laravel package to use with Mach3Builders' User Interface. see [ui.mach3builders.nl](http://ui.mach3builders.nl/) for more information.
 
 ## Installation
 
