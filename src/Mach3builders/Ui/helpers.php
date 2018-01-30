@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Adds an alert
  * 
