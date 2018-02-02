@@ -3,7 +3,7 @@
         <div class="ui-icon-text">
             <i class="far fa-exclamation-triangle"></i>
             <div>{{ trans('ui::form.errors') }}</div>
-            @if ($show)
+            @if (!empty($show))
                 <hr>
                 <ul>
                 @foreach ($errors->all() as $error)
