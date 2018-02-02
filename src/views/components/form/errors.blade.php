@@ -5,8 +5,8 @@
             <div>{{ trans('ui::form.errors') }}</div>
         </div>
         @if (!empty($show))
-            <hr>
-            <ul>
+            <hr class="mt-3">
+            <ul class="mb-0">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
