@@ -7,8 +7,10 @@
         @endif
 
         @if (session()->has('alert.icon'))
-            <i class="far fa-{{ session('alert.icon') }}"></i>
-            <span>{!! session('alert.message') !!}</span>
+            <div class="ui-icon-text">
+                <i class="far fa-{{ session('alert.icon') }}"></i>
+                <div>{!! session('alert.message') !!}</div>
+            </div>
         @else
             {!! session('alert.message') !!}
         @endif
