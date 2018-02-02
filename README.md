@@ -31,6 +31,18 @@ notify('message')->type('info');
 
 ## Components
 
+### Form errors
+
+When validations fail show a alert message and/or error messages
+
+Options:
+- **message**: (boolean) Show the error message
+- **details**: (boolean) Show detailed error messages
+
+```php
+@include('ui::form.errors', $options)
+```
+
 ### Table
 
 Creates a table for listing data.
