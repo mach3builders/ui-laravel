@@ -16,6 +16,8 @@ composer require mach3builders/ui
 alert('message', 'warning');
 
 alert('message')->type('info')->dismissible()->icon('warning');
+
+redirect()->withAlert('message');
 ```
 
 ### Notifications
@@ -27,6 +29,8 @@ icons are automaticly added by type
 notify('message', 'warning');
 
 notify('message')->type('info');
+
+redirect()->withNotification('message');
 ```
 
 ## Components
