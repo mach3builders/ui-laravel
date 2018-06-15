@@ -16,6 +16,8 @@ composer require mach3builders/ui
 alert('message', 'warning');
 
 alert('message')->type('info')->dismissible()->icon('warning');
+
+redirect()->withAlert('message');
 ```
 
 ### Notifications
@@ -27,9 +29,23 @@ icons are automaticly added by type
 notify('message', 'warning');
 
 notify('message')->type('info');
+
+redirect()->withNotification('message');
 ```
 
 ## Components
+
+### Form errors
+
+When validations fail show a alert message and/or error messages
+
+Options:
+- **message**: (boolean) Show the error message
+- **details**: (boolean) Show detailed error messages
+
+```php
+@include('ui::form.errors', $options)
+```
 
 ### Table
 
