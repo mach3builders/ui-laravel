@@ -30,6 +30,16 @@ class UiServiceProvider extends ServiceProvider
         $this->app->singleton('notify', function ($app) {
             return new Notify();
         });
+        
+        RedirectResponse::macro('withAlert', function () {
+            alert(...func_get_args());
+            return $this;
+        });
+
+        RedirectResponse::macro('withNotification', function () {
+            notify(...func_get_args());
+            return $this;
+        });
     }
 
     /**
