@@ -5,6 +5,7 @@ namespace Mach3builders\Ui;
 use Mach3builders\Ui\Alert\Alert;
 use Mach3builders\Ui\Notify\Notify;
 use Illuminate\Support\Facades\View;
+use \Illuminate\Http\RedirectResponse;
 use Illuminate\Support\ServiceProvider;
 
 class UiServiceProvider extends ServiceProvider
