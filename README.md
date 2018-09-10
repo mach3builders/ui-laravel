@@ -47,26 +47,13 @@ Options:
 @include('ui::form.errors', $options)
 ```
 
-### Table
-
-Creates a table for listing data.
-
-Slots:
-- **action**: The url where to send a DELETE request to upon confirmation
-- **title**: Modal title
-- **main**: Modal body
-
-```php
-@component('ui::table', ['data' => $data])
-@endcomponent
-```
-
 ### Delete action
 
 Creates a delete button with a modal to confirm deletion.
 
 Slots:
 - **action**: The url where to send a DELETE request to upon confirmation
+- **icon**: An font awesome icon class
 - **title**: Modal title
 - **main**: Modal body
 
