@@ -67,6 +67,7 @@ Creates a delete button with a modal to confirm deletion.
 
 Slots:
 - **action**: The url where to send a DELETE request to upon confirmation
+- **icon**: An font awesome icon class
 - **title**: Modal title
 - **main**: Modal body
 

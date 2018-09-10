@@ -5,7 +5,7 @@
     class="btn btn-sm ui-btn-icon ui-btn-transparent" 
     data-toggle="modal" 
     data-target="#modal-action-delete-{{ $id }}">
-    <i class="far fa-trash-alt"></i>
+    <i class="far {{ $icon ?? 'fa-trash-alt' }}"></i>
 </button>
 
 <div class="modal fade" id="modal-action-delete-{{ $id }}">
