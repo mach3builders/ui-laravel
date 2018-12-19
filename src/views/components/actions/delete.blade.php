@@ -1,12 +1,17 @@
 @php
     $id = str_random();
 @endphp
-<button 
-    class="btn btn-sm ui-btn-icon ui-btn-transparent" 
-    data-toggle="modal" 
-    data-target="#modal-action-delete-{{ $id }}">
-    <i class="far {{ $icon ?? 'fa-trash-alt' }}"></i>
-</button>
+<span
+    data-toggle="tooltip"
+    data-placement="top"
+    title="{{ $title ?? trans('ui::delete.tooltip') }}">
+    <button
+        class="btn btn-sm ui-btn-icon ui-btn-transparent"
+        data-toggle="modal"
+        data-target="#modal-action-delete-{{ $id }}">
+        <i class="far {{ $icon ?? 'fa-trash-alt' }}"></i>
+    </button>
+</span>
 
 <div class="modal fade" id="modal-action-delete-{{ $id }}">
     <div class="modal-dialog" role="document">
