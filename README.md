@@ -56,6 +56,7 @@ Slots:
 - **icon**: An font awesome icon class
 - **title**: Modal title
 - **main**: Modal body
+- **tooltip**: Tooltip title
 
 ```php
 @component('ui::actions.delete', ['action' => "/model/{$id}"])
