@@ -4,7 +4,7 @@
 <span
     data-toggle="tooltip"
     data-placement="top"
-    title="{{ $title ?? trans('ui::delete.tooltip') }}">
+    title="{{ $tooltip ?? trans('ui::delete.tooltip') }}">
     <button
         class="btn btn-sm ui-btn-icon ui-btn-transparent"
         data-toggle="modal"
