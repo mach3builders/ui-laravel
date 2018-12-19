@@ -32,12 +32,12 @@ class UiServiceProvider extends ServiceProvider
             return new Notify();
         });
         
-        RedirectResponse::macro('withAlert', function () {
+        RedirectResponse::macro('alert', function () {
             alert(...func_get_args());
             return $this;
         });
 
-        RedirectResponse::macro('withNotification', function () {
+        RedirectResponse::macro('notify', function () {
             notify(...func_get_args());
             return $this;
         });
