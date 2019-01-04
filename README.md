@@ -1,65 +1,67 @@
 # Mach3Builders UI helpers
-This package contains little helper functions for the Laravel package to use with Mach3Builders' User Interface. see [ui.mach3builders.nl](http://ui.mach3builders.nl/) for more information.
+This package contains helper functions to assist our user interface package. see [ui.mach3builders.nl](http://ui.mach3builders.nl/) for more information on how to get started with it.
 
 ## Installation
-
 ```
 composer require mach3builders/ui
 ```
+Next install the [@mach3builders/ui](http://ui.mach3builders.nl/) package and include the CSS and JS needed.
 
-## Helpers
+## Usage
 
-### Alert
-[Previews](http://ui.mach3builders.nl/components/alert/) at the docs
+### alert
 
-```php
-alert('message', 'warning');
-
-alert('message')->type('info')->dismissible()->icon('warning');
-
-redirect()->withAlert('message');
-```
-
-### Notifications
-[Previews](http://ui.mach3builders.nl/components/notificio/) at the docs
-
-icons are automaticly added by type
+To show and alert (or notification) you can use the alert helper. After being redirected the alert will show on screen.
 
 ```php
-notify('message', 'warning');
-
-notify('message')->type('info');
-
-redirect()->withNotification('message');
+public function store()
+{
+    alert('message', 'succes');
+    
+    redirect('/home');
+}
 ```
 
-## Components
+Or you could use the helper like this
 
-### Form errors
+```
+alert('message')->type('succes');
+alert('message')->dissmissable();
+alert('message')->icon('user');
 
-When validations fail show a alert message and/or error messages
+redirect()->alert('message', 'succes');
+```
 
-Options:
-- **message**: (boolean) Show the error message
-- **details**: (boolean) Show detailed error messages
+### notify
+Works the same as alert, with a few different methods
+```
+notify('message')->type('succes');
+notify('message')->icon('user');
+
+redirect()->notify('message', 'succes');
+```
+
+Next you need to add the components to your blade layout
+
+```html
+@include('ui::alert')
+@include('ui::notify')
+```
+
+### Delete modal
+
+Creates a delete button with a modal to confirm deletion. When the confirm button is pressed a DELETE request is made the the given action.
 
 ```php
-@include('ui::form.errors', $options)
+@component('ui::actions.delete', ['action' => "/user/{$user->id}"])
+    Are you sure you want to delete {{ $user->name }}
+@endcomponent
 ```
 
-### Delete action
+You can also use the following slots:
 
-Creates a delete button with a modal to confirm deletion.
-
-Slots:
 - **action**: The url where to send a DELETE request to upon confirmation
 - **icon**: An font awesome icon class
 - **title**: Modal title
 - **main**: Modal body
 - **tooltip**: Tooltip title
-
-```php
-@component('ui::actions.delete', ['action' => "/model/{$id}"])
-    {!! trans('taxes.delete-body') !!}
-@endcomponent
-```
