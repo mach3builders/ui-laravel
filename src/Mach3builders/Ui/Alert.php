@@ -1,6 +1,8 @@
 <?php
 
-namespace Mach3builders\Ui\Alert;
+namespace Mach3builders\Ui;
+
+use Illuminate\Contracts\Session\Session;
 
 class Alert
 {
@@ -17,30 +19,43 @@ class Alert
     ];
 
     /**
+     * Create a new alert instance
+     *
+     * @param Illuminate\Contracts\Session\Session $session
+     */
+    public function __construct(Session $session)
+    {
+        $this->session = $session;
+    }
+
+    /**
      * Set the alert message
      * 
      * @param  string $message
      * @param  string $type
-     * @return Alert
+     * @return \Mach3builders\Ui\Alert
      */
     public function message($message, $type = 'info')
     {
-        session()->flash('alert.message', $message);
-        return $this->type($type);
+        $this->session->flash('alert.message', $message);
+        
+        $this->type($type);
+
+        return $this;
     }
 
     /**
      * Set the type of alert
      *
      * @param string $type
-     * @return Alert
+     * @return \Mach3builders\Ui\Alert
      */
     public function type($type)
     {
-        session()->flash('alert.type', $type);
+        $this->session->flash('alert.type', $type);
 
         if (array_key_exists($type, $this->type_icons)) {
-            session()->flash('alert.icon', $this->type_icons[$type]);
+            $this->icon($this->type_icons[$type]);
         }
 
         return $this;
@@ -50,11 +65,12 @@ class Alert
      * Make the alert dismissible
      *
      * @param  boolean $dismissible
-     * @return Alert
+     * @return \Mach3builders\Ui\Alert
      */
-    public function dismissible($dismissible=true)
+    public function dismissible($dismissible = true)
     {
-        session()->flash('alert.dismissible', $dismissible);
+        $this->session->flash('alert.dismissible', $dismissible);
+        
         return $this;
     }
 
@@ -62,11 +78,12 @@ class Alert
      * Add an icon to the alert
      *
      * @param  boolean $dismissible
-     * @return Alert
+     * @return \Mach3builders\Ui\Alert
      */
     public function icon($icon)
     {
-        session()->flash('alert.icon', $icon);
+        $this->session->flash('alert.icon', $icon);
+
         return $this;
     }
 }

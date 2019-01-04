@@ -22,6 +22,11 @@
             "src/Mach3builders/Ui/helpers.php"
         ]
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Mach3builders\\Ui\\Test\\": "tests"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
@@ -32,5 +37,8 @@
                 "Notify": "Mach3builders\\Ui\\Facades\\Notify"
             }
         }
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0"
     }
 }
