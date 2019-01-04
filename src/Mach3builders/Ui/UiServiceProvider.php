@@ -2,8 +2,6 @@
 
 namespace Mach3builders\Ui;
 
-use Mach3builders\Ui\Alert\Alert;
-use Mach3builders\Ui\Notify\Notify;
 use Illuminate\Support\Facades\View;
 use \Illuminate\Http\RedirectResponse;
 use Illuminate\Support\ServiceProvider;
@@ -25,11 +23,11 @@ class UiServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('alert', function ($app) {
-            return new Alert();
+            return $this->app->make('Mach3builders\Ui\Alert');
         });
 
         $this->app->singleton('notify', function ($app) {
-            return new Notify();
+            return $this->app->make('Mach3builders\Ui\Notify');
         });
         
         RedirectResponse::macro('alert', function () {
@@ -53,23 +51,6 @@ class UiServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../views/components', 'ui');
 
         $this->loadTranslationsFrom(__DIR__.'/../../lang', 'ui');
-
-        $this->bootComposers();
-    }
-
-    /**
-     * Boot the view composers
-     *
-     * @return void
-     */
-    protected function bootComposers()
-    {
-        View::composer('ui::form.errors', function ($view) {
-            $view->with(array_merge(
-                ['message' => true, 'details' => false],
-                $view->getData()
-            ));
-        });
     }
 
     /**

@@ -2,40 +2,36 @@
 
 namespace Mach3builders\Ui\Test;
 
-use Mach3builders\Ui\Facades\Notify;
+use Mockery;
+use Mach3builders\Ui\Notify;
 
 class NotifyTest extends TestCase
 {
-    protected function getEnvironmentSetUp($app)
+    public function setUp()
     {
-        $app['router']->get('notify', function () {
-            return view('ui::notify');
-        });
+        $this->session = Mockery::spy('Illuminate\Session\Store');
+        $this->notify = new Notify($this->session);
     }
 
-    public function test_it_can_notify_a_message()
+    /** @test */
+    public function it_notifies_a_basic_message()
     {
-        Notify::message('Notification message');
+        $this->notify->message('notification message');
 
-        $response = $this->get('/notify');
-        
-        $response->assertSeeText('Notification message');
-        $response->assertSessionHas('notify.message', 'Notification message');
+        $this->session
+            ->shouldHaveReceived('flash')
+            ->with('notify.message', 'notification message')
+            ->times(1);
     }
 
-    public function test_it_can_notify_a_message_with_a_type()
+    /** @test */
+    public function it_notifies_with_a_type()
     {
-        Notify::message('Notification message')->type('success');
+        $this->notify->message('notification with type')->type('warning');
 
-        $response = $this->get('/notify');
-        
-        $response->assertSessionHas('notify.type', 'success');
-    }
-
-    public function test_it_doesnt_display_without_message()
-    {
-        $response = $this->get('/notify');
-
-        $this->assertSame("", $response->getContent());
+        $this->session
+            ->shouldHaveReceived('flash')
+            ->with('notify.type', 'warning')
+            ->times(1);
     }
 }

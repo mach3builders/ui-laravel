@@ -2,58 +2,58 @@
 
 namespace Mach3builders\Ui\Test;
 
-use Mach3builders\Ui\Facades\Alert;
+use Mockery;
+use Mach3builders\Ui\Alert;
 
 class AlertTest extends TestCase
 {
-    protected function getEnvironmentSetUp($app)
+    public function setUp()
     {
-        $app['router']->get('alert', function () {
-            return view('ui::alert');
-        });
+        $this->session = Mockery::spy('Illuminate\Session\Store');
+        $this->alert = new Alert($this->session);
     }
 
-    public function test_it_can_alert_a_message()
+    /** @test */
+    public function it_alerts_a_basic_message()
     {
-        Alert::message('Alert message');
+        $this->alert->message('alert message');
 
-        $response = $this->get('/alert');
-        
-        $response->assertSeeText('Alert message');
-        $response->assertSessionHas('alert.message', 'Alert message');
+        $this->session
+            ->shouldHaveReceived('flash')
+            ->with('alert.message', 'alert message')
+            ->times(1);
     }
 
-    public function test_it_can_alert_a_message_with_a_type()
+    /** @test */
+    public function it_can_have_types()
     {
-        Alert::message('Alert message')->type('success');
+        $this->alert->message('dangerous message')->type('danger');
 
-        $response = $this->get('/alert');
-        
-        $response->assertSessionHas('alert.type', 'success');
+        $this->session
+            ->shouldHaveReceived('flash')
+            ->with('alert.type', 'danger')
+            ->times(1);
     }
 
-    public function test_it_can_alert_a_message_and_be_dismissible()
+    /** @test */
+    public function it_can_be_dismissable()
     {
-        Alert::message('Alert message')->dismissible(true);
+        $this->alert->message('dismissible message')->dismissible();
 
-        $response = $this->get('/alert');
-        
-        $response->assertSessionHas('alert.dismissible', true);
+        $this->session
+            ->shouldHaveReceived('flash')
+            ->with('alert.dismissible', true)
+            ->times(1);
     }
 
-    public function test_it_can_alert_a_message_with_icon()
+    /** @test */
+    public function it_can_have_icons()
     {
-        Alert::message('Alert message')->icon('warning-icon');
+        $this->alert->message('dismissible with an icon')->icon('exclamation');
 
-        $response = $this->get('/alert');
-        
-        $response->assertSessionHas('alert.icon', 'warning-icon');
-    }
-
-    public function test_it_doesnt_display_without_message()
-    {
-        $response = $this->get('/alert');
-
-        $this->assertSame("", $response->getContent());
+        $this->session
+            ->shouldHaveReceived('flash')
+            ->with('alert.icon', 'exclamation')
+            ->times(1);
     }
 }
