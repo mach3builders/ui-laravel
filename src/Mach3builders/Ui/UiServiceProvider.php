@@ -51,6 +51,23 @@ class UiServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../views/components', 'ui');
 
         $this->loadTranslationsFrom(__DIR__.'/../../lang', 'ui');
+    
+        $this->bootComposers();
+    }
+
+    /**
+     * Boot the view composers
+     *
+     * @return void
+     */
+    protected function bootComposers()
+    {
+        View::composer('ui::form.errors', function ($view) {
+            $view->with(array_merge(
+                ['message' => true, 'details' => false],
+                $view->getData()
+            ));
+        });
     }
 
     /**
