@@ -80,6 +80,12 @@ Extend this for the basic mail layout
 @extends('ui::mail.layout')
 ```
 
-You can yield the following
+You have the following sections
 
-- **style**: The url where to send a DELETE request to upon confirmation
+- **style**: This will be set in the header. use <style></style>
+- **logo**: Place a image tag on the top of the mail, this is outside the mail wrapper
+- **content**: Main body of the email
+- **footer**: Footer at the bottom of the email, inside the wrapper
+- **unsubscribe**: Unsubscribe text at the end of the email
+
+
