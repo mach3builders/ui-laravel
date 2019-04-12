@@ -285,6 +285,8 @@
                                                     @yield('content')
 
                                                     @hasSection('footer')
+                                                        <hr class="devider"/>
+
                                                         <table class="content-wrapper-content-footer" border="0"  cellspacing="0" cellpadding="0">
                                                             <tbody>
                                                                 <tr>

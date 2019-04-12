@@ -70,3 +70,16 @@ You can also use the following slots:
 @component('ui::actions.delete', ['action' => "/model/{$id}"])
     {!! trans('taxes.delete-body') !!}
 @endcomponent
+```
+
+### Mail layout
+
+Extend this for the basic mail layout
+
+```php
+@extends('ui::mail.layout')
+```
+
+You can yield the following
+
+- **style**: The url where to send a DELETE request to upon confirmation
