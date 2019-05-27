@@ -30,13 +30,13 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">
                     {{ trans('ui::delete.cancel') }}
                 </button>
                 <form method="POST" action="{{ $action }}">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <button type="submit" class="btn btn-success">
+                    <button type="submit" class="btn btn-warning">
                         {{ trans('ui::delete.confirm') }}
                     </button>
                 </form>
