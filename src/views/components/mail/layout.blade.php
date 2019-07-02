@@ -238,7 +238,7 @@
             border-bottom: 2px solid #555555;
         }
 
-        .devider {
+        .divider {
             background-color:#dee2e6; 
             border:none; 
             color:#dee2e6; 
@@ -285,7 +285,7 @@
                                                     @yield('content')
 
                                                     @hasSection('footer')
-                                                        <hr class="devider"/>
+                                                        <hr class="divider"/>
 
                                                         <table class="content-wrapper-content-footer" border="0"  cellspacing="0" cellpadding="0">
                                                             <tbody>
