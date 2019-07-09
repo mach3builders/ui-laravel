@@ -36,7 +36,7 @@
                 <form method="POST" action="{{ $action }}">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                    <button type="submit" class="btn btn-warning">
+                    <button type="submit" class="btn btn-danger">
                         {{ trans('ui::delete.confirm') }}
                     </button>
                 </form>
