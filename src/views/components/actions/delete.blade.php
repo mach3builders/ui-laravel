@@ -33,9 +33,9 @@
                 <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">
                     {{ trans('ui::delete.cancel') }}
                 </button>
-                <form method="POST" action="{{ $action }}">
+                <form method="{{ $method ?? 'POST' }}" action="{{ $action }}">
                     {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
+                    {{ method_field($method_field ?? 'DELETE') }}
                     <button type="submit" class="btn btn-danger">
                         {{ trans('ui::delete.confirm') }}
                     </button>
