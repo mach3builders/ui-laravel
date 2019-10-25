@@ -40,6 +40,7 @@
         h1 {
             font-size: 32px;
             font-weight: bold;
+            line-height: 1.1;
             margin: 0 0 32px 0;
             padding: 0;
         }
@@ -47,6 +48,7 @@
         h2 {
             font-size: 28px;
             font-weight: bold;
+            line-height: 1.1;
             margin: 0 0 32px 0;
             padding: 0;
         }
@@ -54,28 +56,32 @@
         h3 {
             font-size: 24px;
             font-weight: bold;
-            margin: 0;
+            line-height: 1.1;
+            margin: 0 0 16px 0;
             padding: 0;
         }
 
         h4 {
             font-size: 22px;
             font-weight: bold;
-            margin: 0;
+            line-height: 1.1;
+            margin: 0 0 16px 0;
             padding: 0;
         }
 
         h5 {
             font-size: 20px;
             font-weight: bold;
-            margin: 0;
+            line-height: 1.1;
+            margin: 0 0 8px 0;
             padding: 0;
         }
 
         h6 {
             font-size: 16px;
             font-weight: bold;
-            margin: 0;
+            line-height: 1.1;
+            margin: 0 0 8px 0;
             padding: 0;
         }
 
@@ -155,6 +161,15 @@
             padding: 32px; 
             vertical-align: top; 
             text-align: left;
+        }
+
+        .content-wrapper-body {
+            margin: 0 0 32px 0;
+        }
+
+        .content-wrapper-signature {
+            font-size: 13px;
+            margin: 0 0 32px 0;
         }
 
         .content-wrapper-footer {
@@ -274,17 +289,38 @@
 
                                     <table class="content-wrapper" border="0"  cellspacing="0" cellpadding="0">
                                         <tbody>
+                                            @if (View::hasSection('logo'))
+                                                <tr>
+                                                    <td class="content-wrapper-header" align="center">
+                                                        @yield('logo')
+                                                    </td>
+                                                </tr>
+                                            @endif
+
                                             <tr>
-                                                <td class="content-wrapper-header" align="center">
-                                                    @yield('logo')
-                                                </td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td class="content-wrapper-content" bgcolor="#FFF">
+                                                <td class="content-wrapper-content" bgcolor="#FFFFFF">
+
+                                                    @if (View::hasSection('salutation'))
+                                                        <h3>
+                                                            @yield('salutation')
+                                                        </h3>
+                                                    @endif
+
                                                     @yield('content')
 
-                                                    @hasSection('footer')
+                                                    @if (View::hasSection('body'))
+                                                        <div class="content-wrapper-body">
+                                                            @yield('body')
+                                                        </div>
+                                                    @endif
+
+                                                    @if (View::hasSection('signature'))
+                                                        <div class="content-wrapper-signature">
+                                                            @yield('signature')
+                                                        </div>
+                                                    @endif
+
+                                                    @if (View::hasSection('footer'))
                                                         <hr class="divider"/>
 
                                                         <table class="content-wrapper-content-footer" border="0"  cellspacing="0" cellpadding="0">
@@ -297,9 +333,9 @@
                                                             </tbody>
                                                         </table>
                                                     @endif
+                                                    
                                                 </td>
                                             </tr>
-                                            
                                             <tr>
                                                 <td class="content-wrapper-footer" align="center">
                                                     @yield('unsubscribe')
