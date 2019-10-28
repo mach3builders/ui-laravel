@@ -39,7 +39,7 @@
 
         h1 {
             font-size: 32px;
-            font-weight: bold;
+            font-weight: 500;
             line-height: 1.1;
             margin: 0 0 32px 0;
             padding: 0;
@@ -47,7 +47,7 @@
 
         h2 {
             font-size: 28px;
-            font-weight: bold;
+            font-weight: 500;
             line-height: 1.1;
             margin: 0 0 32px 0;
             padding: 0;
@@ -55,7 +55,7 @@
 
         h3 {
             font-size: 24px;
-            font-weight: bold;
+            font-weight: 500;
             line-height: 1.1;
             margin: 0 0 16px 0;
             padding: 0;
@@ -63,7 +63,7 @@
 
         h4 {
             font-size: 22px;
-            font-weight: bold;
+            font-weight: 500;
             line-height: 1.1;
             margin: 0 0 16px 0;
             padding: 0;
@@ -71,7 +71,7 @@
 
         h5 {
             font-size: 20px;
-            font-weight: bold;
+            font-weight: 500;
             line-height: 1.1;
             margin: 0 0 8px 0;
             padding: 0;
@@ -79,7 +79,7 @@
 
         h6 {
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 500;
             line-height: 1.1;
             margin: 0 0 8px 0;
             padding: 0;
@@ -168,7 +168,7 @@
         }
 
         .content-wrapper-signature {
-            font-size: 13px;
+            font-size: 14px;
             margin: 0 0 32px 0;
         }
 
@@ -248,7 +248,7 @@
         }
 
         .table tfoot td {
-            font-weight: bold;
+            font-weight: 500;
             border-top: 2px solid #555555;
             border-bottom: 2px solid #555555;
         }
