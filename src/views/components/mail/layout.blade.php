@@ -175,8 +175,7 @@
         .content-wrapper-footer {
             color: #555;
             font-size: 11px;
-            margin: 0 0 32px 0;
-            padding: 9px 0;
+            padding: 9px 0 32px 0;
         }
 
         .content-wrapper-footer a {
