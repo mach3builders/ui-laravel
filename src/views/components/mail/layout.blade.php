@@ -169,6 +169,9 @@
 
         .content-wrapper-signature {
             font-size: 14px;
+        }
+
+        .content-wrapper-signature:not(:last-child) {
             margin: 0 0 32px 0;
         }
 
