@@ -158,7 +158,7 @@
             background-color: #FFF;
             box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16); 
             margin: 0; 
-            padding: 32px; 
+            padding: 32px 32px 0 32px; 
             vertical-align: top; 
             text-align: left;
         }
@@ -169,15 +169,13 @@
 
         .content-wrapper-signature {
             font-size: 14px;
-        }
-
-        .content-wrapper-signature:not(:last-child) {
             margin: 0 0 32px 0;
         }
 
         .content-wrapper-footer {
             color: #555;
             font-size: 11px;
+            margin: 0 0 32px 0;
             padding: 9px 0;
         }
 
@@ -339,11 +337,13 @@
                                                     
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="content-wrapper-footer" align="center">
-                                                    @yield('unsubscribe')
-                                                </td>
-                                            </tr>
+                                            @if (View::hasSection('unsubscribe'))
+                                                <tr>
+                                                    <td class="content-wrapper-footer" align="center">
+                                                        @yield('unsubscribe')
+                                                    </td>
+                                                </tr>
+                                            @endif
                                         </tbody>
                                     </table>
 
