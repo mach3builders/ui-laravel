@@ -12,7 +12,11 @@
         }
     ],
     "require": {
-        "php": "^7.0"
+        "php": "^7.0",
+        "illuminate/support": "^5.8|^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~4.3"
     },
     "autoload": {
         "psr-0": {
@@ -37,8 +41,5 @@
                 "Notify": "Mach3builders\\Ui\\Facades\\Notify"
             }
         }
-    },
-    "require-dev": {
-        "orchestra/testbench": "~3.0"
     }
 }

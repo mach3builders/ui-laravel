@@ -1,5 +1,5 @@
 @php
-    $id = str_random();
+    $id = Str::random();
 @endphp
 <button
     data-toggle="tooltip"

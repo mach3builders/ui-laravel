@@ -7,7 +7,7 @@ use Mach3builders\Ui\Notify;
 
 class NotifyTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->session = Mockery::spy('Illuminate\Session\Store');
         $this->notify = new Notify($this->session);
