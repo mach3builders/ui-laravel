@@ -7,7 +7,7 @@ use Mach3builders\Ui\Alert;
 
 class AlertTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->session = Mockery::spy('Illuminate\Session\Store');
         $this->alert = new Alert($this->session);
