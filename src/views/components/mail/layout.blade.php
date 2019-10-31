@@ -306,8 +306,12 @@
                                                         </h3>
                                                     @endif
 
-                                                    @yield('content')
-
+                                                    @if (View::hasSection('content'))
+                                                        <div class="content-wrapper-body">
+                                                            @yield('content')
+                                                        </div>
+                                                    @endif
+                                                    
                                                     @if (View::hasSection('body'))
                                                         <div class="content-wrapper-body">
                                                             @yield('body')
