@@ -1,5 +1,5 @@
 @if (session()->has('alert.message'))
-    <div class="alert alert-{{ session('alert.type') }} alert-dismissible fade show" role="alert">
+    <div class="alert alert-{{ session('alert.type') }} alert-dismissible fade show">
         @if (session('alert.dismissible') === true)
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>

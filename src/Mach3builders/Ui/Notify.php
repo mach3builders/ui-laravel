@@ -7,7 +7,7 @@ use Illuminate\Contracts\Session\Session;
 class Notify
 {
     /**
-     * Create a new alert instance
+     * Create a new notify instance
      *
      * @param Illuminate\Contracts\Session\Session $session
      */
