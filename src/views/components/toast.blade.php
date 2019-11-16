@@ -1,5 +1,5 @@
 @if (session()->has('toast.message'))
-    <div class="toast ui-toast-{{ session('toast.type') }}" data-delay="4000">
+    <div class="toast ui-toast-{{ session('toast.type') }} show" data-delay="4000">
         @if (session()->has('toast.title'))
             <div class="toast-header">
                 <span class="mr-auto">{{ session('toast.title') }}</span>
