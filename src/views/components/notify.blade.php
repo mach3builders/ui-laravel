@@ -2,7 +2,7 @@
     <div class="ui-notifier ui-notifier-{{ session('notify.type') }}" data-show="true" data-no-transition-cache>
         <div>{!! session('notify.message') !!}</div>
     </div>
-@elseif (count($errors))
+@elseif (session()->has('errors'))
     <div class="ui-notifier ui-notifier-danger" data-show="true" data-no-transition-cache>
         <div>{{ trans('ui::form.errors') }}</div>
     </div>
