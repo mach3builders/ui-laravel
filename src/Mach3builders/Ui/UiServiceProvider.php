@@ -29,6 +29,10 @@ class UiServiceProvider extends ServiceProvider
         $this->app->singleton('notify', function ($app) {
             return $this->app->make('Mach3builders\Ui\Notify');
         });
+
+        $this->app->singleton('toast', function ($app) {
+            return $this->app->make('Mach3builders\Ui\Toast');
+        });
         
         RedirectResponse::macro('alert', function () {
             alert(...func_get_args());
@@ -37,6 +41,11 @@ class UiServiceProvider extends ServiceProvider
 
         RedirectResponse::macro('notify', function () {
             notify(...func_get_args());
+            return $this;
+        });
+
+        RedirectResponse::macro('toast', function () {
+            toast(...func_get_args());
             return $this;
         });
     }
@@ -80,6 +89,7 @@ class UiServiceProvider extends ServiceProvider
         return [
             'alert',
             'notify',
+            'toast',
         ];
     }
 }

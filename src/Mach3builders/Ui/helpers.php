@@ -27,3 +27,18 @@ if (! function_exists('notify')) {
         return $notify->message($message, $type);
     }
 }
+
+/**
+ * Create a toast message
+ *
+ * @param  string $message
+ * @param  string $type
+ * @param  string $title
+ * @return string
+ */
+if (! function_exists('toast')) {
+    function toast($message, $type = 'success', $title = null) {
+        $toast = app('toast');
+        return $toast->message($message, $type)->title($title);
+    }
+}

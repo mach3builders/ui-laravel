@@ -173,13 +173,13 @@
         }
 
         .content-wrapper-footer {
-            color: #555;
+            color: #888;
             font-size: 11px;
             padding: 9px 0 32px 0;
         }
 
         .content-wrapper-footer a {
-            color: #555;
+            color: #888;
             text-decoration: underline;
         }
 
@@ -262,15 +262,15 @@
         }
 
         .content-wrapper-content-footer {
-            color: #555555; 
-            font-size: 14px;
-            margin: 0; 
+            color: #666; 
+            font-size: 12px;
+            margin: 0 0 22px 0; 
             padding: 0; 
             vertical-align: top;
         }
 
         .content-wrapper-content-footer a {
-            color: #7F8FA4;
+            color: #666;
             text-decoration: underline;
         }
     </style>
@@ -289,7 +289,7 @@
 
                                     <table class="content-wrapper" border="0"  cellspacing="0" cellpadding="0">
                                         <tbody>
-                                            @if (View::hasSection('logo'))
+                                            @hasSection('logo')
                                                 <tr>
                                                     <td class="content-wrapper-header" align="center">
                                                         @yield('logo')
@@ -300,27 +300,31 @@
                                             <tr>
                                                 <td class="content-wrapper-content" bgcolor="#FFFFFF">
 
-                                                    @if (View::hasSection('salutation'))
+                                                    @hasSection('salutation')
                                                         <h3>
                                                             @yield('salutation')
                                                         </h3>
                                                     @endif
 
-                                                    @yield('content')
-
-                                                    @if (View::hasSection('body'))
+                                                    @hasSection('content')
+                                                        <div class="content-wrapper-body">
+                                                            @yield('content')
+                                                        </div>
+                                                    @endif
+                                                    
+                                                    @hasSection('body')
                                                         <div class="content-wrapper-body">
                                                             @yield('body')
                                                         </div>
                                                     @endif
 
-                                                    @if (View::hasSection('signature'))
+                                                    @hasSection('signature')
                                                         <div class="content-wrapper-signature">
                                                             @yield('signature')
                                                         </div>
                                                     @endif
 
-                                                    @if (View::hasSection('footer'))
+                                                    @hasSection('footer')
                                                         <hr class="divider"/>
 
                                                         <table class="content-wrapper-content-footer" border="0"  cellspacing="0" cellpadding="0">
@@ -336,7 +340,7 @@
                                                     
                                                 </td>
                                             </tr>
-                                            @if (View::hasSection('unsubscribe'))
+                                            @hasSection('unsubscribe')
                                                 <tr>
                                                     <td class="content-wrapper-footer" align="center">
                                                         @yield('unsubscribe')
