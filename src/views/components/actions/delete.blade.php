@@ -5,7 +5,7 @@
     data-toggle="tooltip"
     data-placement="top"
     title="{{ $tooltip ?? trans('ui::delete.tooltip') }}"
-    onclick="$('#modal-action-delete-{{ $id }}').modal('show')"
+    onclick="$(this).tooltip('hide'); $('#modal-action-delete-{{ $id }}').modal('show');"
     class="btn btn-sm ui-btn-icon ui-btn-transparent">
     <i class="far {{ $icon ?? 'fa-trash-alt' }}"></i>
 </button>
@@ -29,7 +29,7 @@
                 <form method="{{ $method ?? 'POST' }}" action="{{ $action }}">
                     {{ csrf_field() }}
                     {{ method_field($method_field ?? 'DELETE') }}
-                    <button type="submit" class="btn btn-danger">
+                    <button type="submit" id="button-action-delete-{{ $id }}" class="btn btn-danger">
                         {{ trans('ui::delete.confirm') }}
                     </button>
                 </form>
@@ -37,3 +37,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    $('#modal-action-delete-{{ $id }}').on('shown.bs.modal', function () {
+        $('#button-action-delete-{{ $id }}').trigger('focus')
+    })
+</script>
