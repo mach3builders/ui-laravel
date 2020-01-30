@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'errors' => 'You didn\'t fill in all the field correctly.',
+    'errors' => '<strong>An error has occurred.</strong><br>Not all fields are filled in correctly.',
 ];
