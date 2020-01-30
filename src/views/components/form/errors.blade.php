@@ -1,10 +1,7 @@
 @if(count($errors))
     <div class="alert alert-danger">
         @if ($message)
-            <div class="ui-icon-text">
-                <i class="far fa-exclamation-triangle"></i>
-                <div>{{ trans('ui::form.errors') }}</div>
-            </div>
+            {!! trans('ui::form.errors') !!}
         @endif
         @if ($message && $details)
             <hr class="mt-3">
