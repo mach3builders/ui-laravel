@@ -348,21 +348,9 @@
 																			{!! $line !!}
 																		@endforeach
 
-																		@isset($actionText)
-																			<?php
-																				switch ($level) {
-																					case 'success':
-																					case 'error':
-																						$color = $level;
-																					break;
-																					default:
-																						$color = 'primary';
-																				}
-																			?>
-																			@component('mail::button', ['url' => $actionUrl, 'color' => $color])
-																				{{ $actionText }}
-																			@endcomponent
-																		@endisset
+																		@if(! empty($actionUrl) && ! empty($actionText))
+																			@include('ui::notifications.mail-button', compact('actionUrl', 'actionText'))
+																		@endif
 
 																		@foreach ($outroLines as $line)
 																			{!! $line !!}
