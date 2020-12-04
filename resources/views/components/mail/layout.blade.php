@@ -299,7 +299,6 @@
 
                                             <tr>
                                                 <td class="content-wrapper-content" bgcolor="#FFFFFF">
-
                                                     @hasSection('salutation')
                                                         <h3>
                                                             @yield('salutation')

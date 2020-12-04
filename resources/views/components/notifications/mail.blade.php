@@ -303,13 +303,13 @@
 				<td class="h-full" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 0;text-align: left;vertical-align: top;height: 100% !important;">
 					<table style="mso-table-lspace: 0;mso-table-rspace: 0;width: 100%;border-collapse: collapse;">
 						<tbody>
-                            @hasSection('logo')
-                                <tr style="border-collapse: collapse;">
-                                    <td id="page-header" class="w-full" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 0;text-align: center;vertical-align: middle;background-color: #ffffff;border-bottom: 1px solid #dee3ea;border-top: 1px solid #EDF2F7;height: 64px;width: 100% !important;">
-                                        @yield('logo')
-                                    </td>
-                                </tr>
-                            @endif
+							<tr style="border-collapse: collapse;">
+								<td id="page-header" class="w-full" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 0;text-align: center;vertical-align: middle;background-color: #ffffff;border-bottom: 1px solid #dee3ea;border-top: 1px solid #EDF2F7;height: 64px;width: 100% !important;">
+									<a href="{{ request()->getSchemeAndHttpHost() }}">
+										<img src="{{ request()->getSchemeAndHttpHost() }}/img/{{ $logo }}" alt="">
+									</a>
+								</td>
+							</tr>
 
 							<tr style="border-collapse: collapse;">
 								<td id="page-main" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 48px 0 32px 0;text-align: left;vertical-align: top;">
@@ -321,12 +321,12 @@
 												<td class="w-container" width="600" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0 auto !important;padding: 0;text-align: left;vertical-align: top;clear: both !important;display: block !important;max-width: 600px !important;width: 600px !important;">
 
 													<div class="page-content" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;margin: 0 auto;max-width: 600px;padding-left: 8px !important;padding-right: 8px !important;">
-                                                        @hasSection('subject')
+														@if (! empty($subject))
                                                             <table class="card-heading" style="mso-table-lspace: 0;mso-table-rspace: 0;width: 100%;border-collapse: collapse;">
                                                                 <tbody>
                                                                     <tr style="border-collapse: collapse;">
                                                                         <td class="py-8" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #718096;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 12px;line-height: 2;margin: 0;padding: 0;text-align: left;vertical-align: top;font-weight: bold;text-transform: uppercase;padding-left: 32px !important;padding-right: 32px !important;">
-                                                                            @yield('subject')
+																			{{ $subject }}
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -338,27 +338,43 @@
                                                             <tbody>
                                                                 <tr style="border-collapse: collapse;">
                                                                     <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 32px;text-align: left;vertical-align: top;background-color: #ffffff;border-radius: 4px;">
-                                                                        @hasSection('salutation')
-                                                                            <span style="font-weight: bold;font-size: 24px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                @yield('salutation')
-                                                                            </span>
-                                                                            <br><br>
-                                                                        @endif
+																		@if (! empty($greeting))
+																			<span style="font-weight: bold;font-size: 24px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																				{{ $greeting }}
+																			</span>
+																			<br /><br />
+																		@endif
 
-                                                                        @hasSection('content')
-                                                                            @yield('content')
-                                                                        @endif
-                                                                        
-                                                                        @hasSection('body')
-                                                                            @yield('body')
-                                                                        @endif
+																		@foreach ($introLines as $line)
+																			{!! $line !!}
+																		@endforeach
 
-																		@hasSection('signature')
+																		@isset($actionText)
+																			<?php
+																				switch ($level) {
+																					case 'success':
+																					case 'error':
+																						$color = $level;
+																					break;
+																					default:
+																						$color = 'primary';
+																				}
+																			?>
+																			@component('mail::button', ['url' => $actionUrl, 'color' => $color])
+																				{{ $actionText }}
+																			@endcomponent
+																		@endisset
+
+																		@foreach ($outroLines as $line)
+																			{!! $line !!}
+																		@endforeach
+
+																		@if (! empty($salutation))
 																			<div class="mt-7" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-top: 28px !important;">
 																				<hr class="mb-6" style="background-color: #E2E8F0;border: none;color: #E2E8F0;height: 1px;margin: 0;margin-bottom: 24px !important;">
 																				
 																				<div class="text-gray-700 font-size-sm" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 14px !important;line-height: 1.7142857143 !important;color: #4a5568 !important;">
-																					@yield('signature')
+																					{!! $salutation !!}
 																				</div>
 																			</div>
 																		@endif
