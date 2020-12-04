@@ -306,7 +306,7 @@
 							<tr style="border-collapse: collapse;">
 								<td id="page-header" class="w-full" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 0;text-align: center;vertical-align: middle;background-color: #ffffff;border-bottom: 1px solid #dee3ea;border-top: 1px solid #EDF2F7;height: 64px;width: 100% !important;">
 									<a href="{{ request()->getSchemeAndHttpHost() }}">
-										<img src="{{ request()->getSchemeAndHttpHost() }}/img/{{ $logo }}" alt="">
+										<img src="{{ config('ui.logo_mail') }}" alt="">
 									</a>
 								</td>
 							</tr>

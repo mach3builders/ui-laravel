@@ -57,10 +57,14 @@ class UiServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../../views/components', 'ui');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'ui');
 
-        $this->loadTranslationsFrom(__DIR__.'/../../lang', 'ui');
-    
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'ui');
+
+        $this->publishes([
+            __DIR__.'/../resources/img' => public_path('vendor/ui'),
+        ], 'public');
+
         $this->bootComposers();
     }
 

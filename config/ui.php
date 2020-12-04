@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'logo_mail' => 'logo-mail.php',
+    'logo_mail' => '/img/vendor/ui/logo-mail.php',
 ];
