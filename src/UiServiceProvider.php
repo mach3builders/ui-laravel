@@ -62,7 +62,11 @@ class UiServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'ui');
 
         $this->publishes([
-            __DIR__.'/../resources/img' => public_path('vendor/ui'),
+            __DIR__.'/../config/ui.php' => config_path('ui.php'),
+        ], 'config');
+
+        $this->publishes([
+            __DIR__.'/../resources/img' => public_path('img/vendor/ui'),
         ], 'public');
 
         $this->bootComposers();

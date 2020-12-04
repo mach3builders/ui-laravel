@@ -5,6 +5,15 @@ This package contains helper functions to assist our user interface package. see
 ```
 composer require mach3builders/ui
 ```
+
+```
+php artisan vendor:publish --tag=public --force
+```
+
+```
+php artisan vendor:publish --tag=config --force
+```
+
 Next install the [@mach3builders/ui](http://ui.mach3builders.nl/) package and include the CSS and JS needed.
 
 ## Usage

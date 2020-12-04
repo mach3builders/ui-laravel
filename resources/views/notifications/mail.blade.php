@@ -71,7 +71,6 @@
 
 		img {
 			border: 0;
-			height: auto !important;
 			line-height: 100%;
 			outline: none;
 			text-decoration: none;
@@ -306,7 +305,7 @@
 							<tr style="border-collapse: collapse;">
 								<td id="page-header" class="w-full" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 0;text-align: center;vertical-align: middle;background-color: #ffffff;border-bottom: 1px solid #dee3ea;border-top: 1px solid #EDF2F7;height: 64px;width: 100% !important;">
 									<a href="{{ request()->getSchemeAndHttpHost() }}">
-										<img src="{{ config('ui.logo_mail') }}" alt="">
+										<img src="{{ config('app.url') }}{{ config('ui.logo_mail') }}" height="16" alt="">
 									</a>
 								</td>
 							</tr>
@@ -319,7 +318,7 @@
 											<tr style="border-collapse: collapse;">
 												<td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 0;text-align: left;vertical-align: top;"></td>
 												<td class="w-container" width="600" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0 auto !important;padding: 0;text-align: left;vertical-align: top;clear: both !important;display: block !important;max-width: 600px !important;width: 600px !important;">
-
+												
 													<div class="page-content" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;margin: 0 auto;max-width: 600px;padding-left: 8px !important;padding-right: 8px !important;">
 														@if (! empty($subject))
                                                             <table class="card-heading" style="mso-table-lspace: 0;mso-table-rspace: 0;width: 100%;border-collapse: collapse;">
@@ -390,27 +389,16 @@
                                                 <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 0;text-align: left;vertical-align: top;"></td>
                                                 <td class="w-container" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0 auto !important;padding: 0;text-align: left;vertical-align: top;clear: both !important;display: block !important;max-width: 600px !important;width: 600px !important;">
                                                     <div class="page-content" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;margin: 0 auto;max-width: 600px;padding-left: 8px !important;padding-right: 8px !important;">
-														@hasSection('footer')
-															<br>
-															<table class="page-footer" style="mso-table-lspace: 0;mso-table-rspace: 0;width: 100%;border-collapse: collapse;">
-																<tr style="border-collapse: collapse;">
-																	<td class="font-size-xs text-center text-gray-600" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #718096 !important;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 12px !important;line-height: 2 !important;margin: 0;padding: 0;text-align: center !important;vertical-align: top;">
-																		@yield('footer')
-																	</td>
-																</tr>
-															</table>
-														@endif
-
-														@hasSection('unsubscribe')
-															<br>
-															<table class="page-footer" style="mso-table-lspace: 0;mso-table-rspace: 0;width: 100%;border-collapse: collapse;">
-																<tr style="border-collapse: collapse;">
-																	<td class="font-size-xs text-center text-gray-600" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #718096 !important;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 12px !important;line-height: 2 !important;margin: 0;padding: 0;text-align: center !important;vertical-align: top;">
-																		@yield('unsubscribe')
-																	</td>
-																</tr>
-															</table>
-														@endif
+														<br>
+														<table class="page-footer" style="mso-table-lspace: 0;mso-table-rspace: 0;width: 100%;border-collapse: collapse;">
+															<tr style="border-collapse: collapse;">
+																<td class="font-size-xs text-center text-gray-600" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #718096 !important;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 12px !important;line-height: 2 !important;margin: 0;padding: 0;text-align: center !important;vertical-align: top;">
+																	Mach3Builders | Oslo 2b, 2993 LD Barendrecht | 010 - 820 88 90
+																	<br />
+                                                                    <a href="mailto:support@mach3builders.nl">support@mach3builders.nl</a>
+																</td>
+															</tr>
+														</table>
                                                     </div>
                                                 </td>
                                                 <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-collapse: collapse;color: #2D3748;font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;font-size: 16px;line-height: 1.5;margin: 0;padding: 0;text-align: left;vertical-align: top;"></td>
