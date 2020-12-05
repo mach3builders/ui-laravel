@@ -1,9 +1,9 @@
 <?php
 
-namespace Mach3builders\Ui\Test;
+namespace Mach3Builders\UI\Test;
 
 use Mockery;
-use Mach3builders\Ui\Alert;
+use Mach3Builders\UI\Alert;
 
 class AlertTest extends TestCase
 {

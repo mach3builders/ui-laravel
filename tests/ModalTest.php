@@ -1,6 +1,6 @@
 <?php
 
-namespace Mach3builders\Ui\Test;
+namespace Mach3Builders\UI\Test;
 
 use Illuminate\Support\Facades\Blade;
 

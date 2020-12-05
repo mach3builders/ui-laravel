@@ -1,6 +1,6 @@
 <?php
 
-namespace Mach3builders\Ui;
+namespace Mach3Builders\UI;
 
 use Illuminate\Contracts\Session\Session;
 

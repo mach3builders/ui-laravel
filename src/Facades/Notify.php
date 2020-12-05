@@ -1,6 +1,6 @@
 <?php
 
-namespace Mach3builders\Ui\Facades;
+namespace Mach3Builders\UI\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

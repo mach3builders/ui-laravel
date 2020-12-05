@@ -1,9 +1,9 @@
 <?php
 
-namespace Mach3builders\Ui\Test;
+namespace Mach3Builders\UI\Test;
 
 use Mockery;
-use Mach3builders\Ui\Toast;
+use Mach3Builders\UI\Toast;
 
 class ToastTest extends TestCase
 {

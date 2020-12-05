@@ -1,6 +1,6 @@
 <?php
 
-namespace Mach3builders\Ui;
+namespace Mach3Builders\UI;
 
 use Illuminate\Contracts\Session\Session;
 
@@ -22,7 +22,7 @@ class Toast
      * @param  string $message
      * @param  string $type
      * @param  string $title
-     * @return \Mach3builders\Ui\Toast
+     * @return \Mach3Builders\UI\Toast
      */
     public function message($message, $type = 'success', $title = null)
     {
@@ -38,7 +38,7 @@ class Toast
      * Set the type of toast
      *
      * @param string $type
-     * @return \Mach3builders\Ui\Toast
+     * @return \Mach3Builders\UI\Toast
      */
     public function type($type)
     {
@@ -51,7 +51,7 @@ class Toast
      * Set the title of the toast
      *
      * @param  boolean $dismissible
-     * @return \Mach3builders\Ui\Toast
+     * @return \Mach3Builders\UI\Toast
      */
     public function title($title)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mach3builders\Ui;
+namespace Mach3Builders\UI;
 
 use Illuminate\Support\Facades\View;
 use \Illuminate\Http\RedirectResponse;
@@ -23,15 +23,15 @@ class UiServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('alert', function ($app) {
-            return $this->app->make('Mach3builders\Ui\Alert');
+            return $this->app->make('Mach3Builders\UI\Alert');
         });
 
         $this->app->singleton('notify', function ($app) {
-            return $this->app->make('Mach3builders\Ui\Notify');
+            return $this->app->make('Mach3Builders\UI\Notify');
         });
 
         $this->app->singleton('toast', function ($app) {
-            return $this->app->make('Mach3builders\Ui\Toast');
+            return $this->app->make('Mach3Builders\UI\Toast');
         });
         
         RedirectResponse::macro('alert', function () {

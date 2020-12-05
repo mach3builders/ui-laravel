@@ -1,6 +1,6 @@
 <?php
 
-namespace Mach3builders\Ui;
+namespace Mach3Builders\UI;
 
 use Illuminate\Contracts\Session\Session;
 
@@ -33,7 +33,7 @@ class Alert
      * 
      * @param  string $message
      * @param  string $type
-     * @return \Mach3builders\Ui\Alert
+     * @return \Mach3Builders\UI\Alert
      */
     public function message($message, $type = 'info')
     {
@@ -48,7 +48,7 @@ class Alert
      * Set the type of alert
      *
      * @param string $type
-     * @return \Mach3builders\Ui\Alert
+     * @return \Mach3Builders\UI\Alert
      */
     public function type($type)
     {
@@ -65,7 +65,7 @@ class Alert
      * Make the alert dismissible
      *
      * @param  boolean $dismissible
-     * @return \Mach3builders\Ui\Alert
+     * @return \Mach3Builders\UI\Alert
      */
     public function dismissible($dismissible = true)
     {
@@ -78,7 +78,7 @@ class Alert
      * Add an icon to the alert
      *
      * @param  boolean $dismissible
-     * @return \Mach3builders\Ui\Alert
+     * @return \Mach3Builders\UI\Alert
      */
     public function icon($icon)
     {
