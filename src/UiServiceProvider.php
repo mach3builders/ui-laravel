@@ -70,6 +70,12 @@ class UiServiceProvider extends ServiceProvider
         ], 'public');
 
         $this->bootComposers();
+
+        // if ($this->app->runningInConsole()) {
+        //     $this->commands([
+        //         UiInstallCommand::class,
+        //     ]);
+        // }
     }
 
     /**
