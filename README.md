@@ -97,4 +97,26 @@ You have the following sections
 - **footer**: Footer at the bottom of the email, inside the wrapper
 - **unsubscribe**: Unsubscribe text at the end of the email
 
+### Invoices: subscription
 
+```php
+return view('ui::invoices/subscription', [
+	'customer_company_name' => 'PKHold BV',
+	'customer_name' => 'Paul Kruijt',
+	'customer_street' => 'Piet Mondriaansingel 30',
+	'customer_zipcode' => '3059 PD',
+	'customer_city' => 'Rotterdam',
+  	'customer_country' => 'Nederland',
+  	'invoice_number' => 'M3B-000001',
+  	'invoice_date' => '01-01-2021',
+  	'payment_id' => 'tr_qwerty',
+  	'platform_name' => 'Mach3Platform',
+  	'plan_name' => 'Professional',
+  	'plan_info' => 'Betaald voor Mach3Builders',
+  	'plan_period' => '01-01-2021 tot 01-01-2022',
+  	'plan_price' => '€ 19,95',
+  	'invoice_tax' => '€ 4,19',
+  	'invoice_total' => '€ 24,14',
+  	'payment_method' => 'iDEAL',
+]);
+```

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>{{ Label::name() }}</title>
+<title>Mach3Builders</title>
 <meta charset="utf-8">
 <style type="text/css">
     /* elements */
@@ -99,17 +99,16 @@
 <table>
 		<tr>
 			<td class="pt-12">
-                <div class="font-bold">{{ $invoice->parent_name ? $invoice->parent_name : $invoice->name }}</div>
+                <div class="font-bold">{{ $customer_company_name }}</div>
                 <div class="text-gray-700 text-sm">
-                    {{ $invoice->parent_contact ? $invoice->parent_contact : $invoice->contact }}<br>
-                    {{ $invoice->parent_street ? $invoice->parent_street : $invoice->street }}<br>
-                    {{ $invoice->parent_zipcode ? $invoice->parent_zipcode : $invoice->zipcode }}
-                    {{ $invoice->parent_city ? ' '.$invoice->parent_city : ' '.$invoice->city }}<br>
-                    {{ $invoice->parent_country ? $invoice->parent_country : $invoice->country }}
+                    {{ $customer_name }}<br>
+                    {{ $customer_street }}<br>
+                    {{ $customer_zipcode }} {{ $customer_city }}<br>
+                    {{ $customer_country }}
                 </div>
 			</td>
 			<td class="w-0">
-                <img src="{{ url(Label::logoInvoice()) }}" class="h-4 mb-8">
+                <img src="{{ config('app.url') }}{{ config('ui.logo_onvoice') }}" class="h-4 mb-8">
                 <div class="font-bold">Mach3Builders BV</div>
                 <div class="text-gray-700 text-sm">
                     Oslo 2b<br>
@@ -140,15 +139,15 @@
         </tr>
         <tr>
             <td class="align-middle font-bold pr-2 pt-4 text-sm w-0">{{ __('ui::invoice.number') }}</td>
-            <td class="align-middle pt-4 text-gray-700 text-sm">{{ $invoice->invoiceNumber() }}</td>
+            <td class="align-middle pt-4 text-gray-700 text-sm">{{ $invoice_number }}</td>
         </tr>
         <tr>
             <td class="align-middle font-bold pr-2 text-sm w-0">{{ __('ui::invoice.date') }}</td>
-            <td class="align-middle text-gray-700 text-sm">{{ $invoice->created_at ?? $invoice->getDateStart() }}</td>
+            <td class="align-middle text-gray-700 text-sm">{{ $invoice_date }}</td>
         </tr>
         <tr>
             <td class="align-middle font-bold pr-2 text-sm w-0">{{ __('ui::invoice.payment_reference') }}</td>
-            <td class="align-middle text-gray-700 text-sm">{{ $invoice->payment_id }}</td>
+            <td class="align-middle text-gray-700 text-sm">{{ $payment_id }}</td>
         </tr>
     </table>
 
@@ -160,33 +159,33 @@
         </tr>
         <tr>
             <td class="border-b border-gray-400 py-4">
-                <div class="font-bold">{{ Label::name() }}</div>
-                <div>{{ $invoice->plan->name }}</div>
-                @if ($invoice->parentCompany)
-                    <div class="text-gray-700 text-sm">{{ __('ui::invoice.paid_for') }} {{ $invoice->name }}</div>
+                <div class="font-bold">{{ $platform_name }}</div>
+                <div>{{ $plan_name }}</div>
+                @if ($plan_info)
+                    <div class="text-gray-700 text-sm">{{ $plan_info }}</div>
                 @endif
             </td>
-            <td class="border-b border-gray-400 py-4 text-right">{{ $invoice->getPeriod() }}</td>
-            <td class="border-b border-gray-400 py-4 text-right">{{ $invoice->getPrice() }}</td>
+            <td class="border-b border-gray-400 py-4 text-right">{{ $plan_period }}</td>
+            <td class="border-b border-gray-400 py-4 text-right">{{ $plan_price }}</td>
         </tr>
         <tr>
             <td class="border-bottom-none font-bold py-4 text-right" colspan="2">{{ __('ui::invoice.subtotal') }}</td>
-            <td class="border-bottom-none font-bold py-4 text-right">{{ $invoice->getPrice() }}</td>
+            <td class="border-bottom-none font-bold py-4 text-right">{{ $plan_price }}</td>
         </tr>
         <tr>
             <td class="border-b border-gray-400 pb-4 text-right" colspan="2">{{ __('ui::invoice.tax') }}</td>
-            <td class="border-b border-gray-400 pb-4 text-right">{{ $invoice->getTax() }}</td>
+            <td class="border-b border-gray-400 pb-4 text-right">{{ $invoice_tax }}</td>
         </tr>
         <tr>
             <td class="font-bold py-4 text-lg text-right" colspan="2">{{ __('ui::invoice.total') }}</td>
-            <td class="font-bold py-4 text-lg text-right">{{ $invoice->getTotal() }}</td>
+            <td class="font-bold py-4 text-lg text-right">{{ $invoice_total }}</td>
         </tr>
     </table>
 
     <table class="bg-gray-200 mt-8">
         <tr>
             <td class="py-1 px-3 text-center">
-                <span class="font-bold">{{ __('ui::invoice.warning') }}</span>: {{ __('ui::invoice.paid_with') }} {{ $invoice->payment_method }}.
+                <span class="font-bold">{{ __('ui::invoice.warning') }}</span>: {{ __('ui::invoice.paid_with') }} {{ $payment_method }}.
             </td>
         </tr>
     </table>
