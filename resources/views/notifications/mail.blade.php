@@ -344,17 +344,21 @@
 																			<br /><br />
 																		@endif
 
-																		@foreach ($introLines as $line)
-																			{!! $line !!}
-																		@endforeach
+																		@if (! empty($introLines))
+																			@foreach ($introLines as $line)
+																				{!! $line !!}
+																			@endforeach
+																		@endif
 
 																		@if(! empty($actionUrl) && ! empty($actionText))
 																			@include('ui::notifications.mail-button', compact('actionUrl', 'actionText'))
 																		@endif
 
-																		@foreach ($outroLines as $line)
-																			{!! $line !!}
-																		@endforeach
+																		@if (! empty($outroLines))
+																			@foreach ($outroLines as $line)
+																				{!! $line !!}
+																			@endforeach
+																		@endif
 
 																		@if (! empty($salutation))
 																			<div class="mt-7" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-top: 28px !important;">
