@@ -89,11 +89,6 @@ Extend this for the basic mail layout (old version)
 @extends('ui::mail.layout')
 ```
 
-Extend this for the basic mail layout (new version)
-```php
-@extends('ui::notifications.mail')
-```
-
 You have the following sections
 
 - **style**: This will be set in the header. use <style></style>
@@ -101,6 +96,20 @@ You have the following sections
 - **content**: Main body of the email
 - **footer**: Footer at the bottom of the email, inside the wrapper
 - **unsubscribe**: Unsubscribe text at the end of the email
+
+Extend this for the basic mail layout (new version)
+```php
+@extends('ui::notifications.mail')
+```
+
+You can use the recommended mail formatting of Laravel
+```php
+return (new MailMessage)
+        ->greeting('Hello!')
+        ->line('One of your invoices has been paid!')
+        ->action('View Invoice', $url)
+        ->line('Thank you for using our application!');
+```
 
 ### Invoices: subscription
 
