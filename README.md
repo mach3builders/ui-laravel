@@ -83,10 +83,15 @@ You can also use the following slots:
 
 ### Mail layout
 
-Extend this for the basic mail layout
+Extend this for the basic mail layout (old version)
 
 ```php
 @extends('ui::mail.layout')
+```
+
+Extend this for the basic mail layout (new version)
+```php
+@extends('ui::notifications.mail')
 ```
 
 You have the following sections
@@ -100,7 +105,7 @@ You have the following sections
 ### Invoices: subscription
 
 ```php
-return view('ui::invoices/subscription', [
+return view('ui::invoices.subscription', [
 	'customer_company_name' => 'PKHold BV',
 	'customer_name' => 'Paul Kruijt',
 	'customer_street' => 'Piet Mondriaansingel 30',
