@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Mach3builders\\Ui\\": "src"
+            "Mach3Builders\\UI\\": "src"
         },
         "files": [
             "src/helpers.php"
@@ -28,18 +28,18 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Mach3builders\\Ui\\Test\\": "tests"
+            "Mach3Builders\\UI\\Test\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mach3builders\\Ui\\UiServiceProvider"
+                "Mach3Builders\\UI\\UiServiceProvider"
             ],
             "aliases": {
-                "Alert": "Mach3builders\\Ui\\Facades\\Alert",
-                "Notify": "Mach3builders\\Ui\\Facades\\Notify",
-                "Toast": "Mach3builders\\Ui\\Facades\\Toast"
+                "Alert": "Mach3Builders\\UI\\Facades\\Alert",
+                "Notify": "Mach3Builders\\UI\\Facades\\Notify",
+                "Toast": "Mach3Builders\\UI\\Facades\\Toast"
             }
         }
     }

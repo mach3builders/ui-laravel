@@ -53,8 +53,8 @@ redirect()->notify('message', 'succes');
 Next you need to add the components to your blade layout
 
 ```html
-@include('ui::alert')
-@include('ui::notify')
+@include('ui::components.alert')
+@include('ui::components.notify')
 ```
 
 ### Delete modal
