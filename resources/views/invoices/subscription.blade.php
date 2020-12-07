@@ -108,7 +108,7 @@
                 </div>
 			</td>
 			<td class="w-0">
-                <img src="{{ config('app.url') }}{{ config('ui.logo_onvoice') }}" class="h-4 mb-8">
+                <img src="{{ config('ui.logo_invoice') }}" class="h-4 mb-8">
                 <div class="font-bold">Mach3Builders BV</div>
                 <div class="text-gray-700 text-sm">
                     Oslo 2b<br>
