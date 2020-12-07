@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Mach3Builders\\UI\\": "src"
+            "Mach3Builders\\UI\\": "src/"
         },
         "files": [
             "src/helpers.php"
