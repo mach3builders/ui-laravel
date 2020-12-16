@@ -4,7 +4,7 @@ return [
     'date' => 'Datum',
     'invoice' => 'Factuur',
     'number' => 'Nummer',
-    'paid_with' => 'deze factuur is reeds betaald met',
+    'paid_with' => 'Deze factuur is reeds betaald met',
     'payment_reference' => 'Betaalreferentie',
     'period' => 'Periode',
     'plan' => 'Pakket',
