@@ -29,10 +29,6 @@
         text-transform: uppercase;
     }
 
-    img {
-        display: block;
-    }
-
     /* utilities */
     .align-middle { vertical-align: middle !important; }
 
@@ -46,8 +42,7 @@
     .font-bold { font-weight: bold !important; }
 
     .h-4 { height: 1rem !important; }
-
-    .mb-8 { margin-bottom: 2rem !important; }
+    .h-12 { height: 3rem !important; }
 
     .mt-2 { margin-top: 0.5rem !important; }
     .mt-4 { margin-top: 1rem !important; }
@@ -69,7 +64,7 @@
     .pb-4 { padding-bottom: 1rem !important; }
 
     .pt-4 { padding-top: 1rem !important; }
-    .pt-9 { padding-top: 2.375rem !important; }
+    .pt-12 { padding-top: 3rem !important; }
 
     .text-xs { font-size: 0.5rem !important; }
     .text-sm { font-size: 0.75rem !important; }
@@ -90,18 +85,10 @@
 </head>
 <body>
     <table>
-        <tr>
-            <td class="pt-9">
-                <div class="font-bold">{{ $customer_company_name }}</div>
-                <div class="text-gray-700 text-sm">
-                    {{ $customer_name }}<br>
-                    {{ $customer_street }}<br>
-                    {{ $customer_zipcode }} {{ $customer_city }}<br>
-                    {{ $customer_country }}
-                </div>
-			</td>
-			<td class="w-0">
-                <svg viewBox="0 0 278 24" height="16">
+    <tr>
+            <td></td>
+            <td class="h-12 w-0">
+                <svg height="16" viewBox="0 0 278 24">
                     <g>
                         <path fill="#2D3748" d="M18.1,23.7V7.5h-0.2l-4.3,16.2H9.4L5.2,7.5H5v16.2H0V0.3h7.6l3.9,15h0.2l3.9-15h7.5v23.5L18.1,23.7L18.1,23.7z"/>
                         <path fill="#2D3748" d="M40.2,23.7L39,19H32l-1.1,4.7h-5.3l6.3-23.5h7.4l6.2,23.5H40.2z M35.6,5h-0.2l-2.3,9.6h4.8L35.6,5z"/>
@@ -125,7 +112,19 @@
                         <path fill="#2D3748" d="M262.1,23.4v-4.2c2.8,0.2,4.8,0.3,6,0.3c0.9,0,1.7,0,2.2-0.1c0.5-0.1,0.9-0.2,1.1-0.5c0.2-0.2,0.3-0.5,0.4-0.8c0.1-0.3,0.1-0.7,0.1-1.3c0-0.7,0-1.2-0.1-1.6c-0.1-0.3-0.3-0.5-0.6-0.7c-0.3-0.1-0.8-0.3-1.4-0.4l-3.8-0.5c-1.7-0.2-2.9-0.9-3.5-2c-0.6-1.1-0.9-2.7-0.9-4.7c0-2,0.3-3.5,1-4.5c0.7-1,1.6-1.7,2.7-2.1c1.1-0.3,2.6-0.5,4.3-0.5c2.2,0,4.4,0.2,6.6,0.7v4.1c-2-0.2-3.9-0.4-5.5-0.4c-1.7,0-2.8,0.2-3.2,0.5c-0.3,0.2-0.4,0.4-0.5,0.7c-0.1,0.3-0.1,0.7-0.1,1.3c0,0.7,0,1.1,0.1,1.4c0.1,0.3,0.2,0.5,0.5,0.6c0.2,0.1,0.7,0.2,1.2,0.3l4.1,0.6c0.9,0.1,1.7,0.4,2.3,0.7c0.6,0.3,1.1,0.9,1.5,1.6c0.5,1,0.7,2.4,0.7,4.3c0,2.2-0.3,3.8-0.9,4.9c-0.6,1.1-1.4,1.8-2.5,2.2c-1.1,0.3-2.4,0.5-4.1,0.5C266.8,24,264.3,23.8,262.1,23.4z"/>
                     </g>
                 </svg>
-                <br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="font-bold">{{ $customer_company_name }}</div>
+                <div class="text-gray-700 text-sm">
+                    {{ $customer_name }}<br>
+                    {{ $customer_street }}<br>
+                    {{ $customer_zipcode }} {{ $customer_city }}<br>
+                    {{ $customer_country }}
+                </div>
+			</td>
+			<td class="w-0">
                 <div class="font-bold">Mach3Builders BV</div>
                 <div class="text-gray-700 text-sm">
                     Oslo 2b<br>
@@ -152,7 +151,7 @@
     <table class="mt-4">
 		<tr>
             <td class="align-middle font-bold pr-4 text-lg tracking-widest uppercase w-0">{{ strtoupper(__('ui::invoice.invoice')) }}</td>
-            <td>&nbsp;</td>
+            <td></td>
         </tr>
         <tr>
             <td class="align-middle font-bold pr-2 pt-4 text-sm w-0">{{ __('ui::invoice.number') }}</td>
