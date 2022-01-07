@@ -4,6 +4,7 @@
 <button
     data-toggle="tooltip"
     data-placement="top"
+    type="button"
     title="{{ $tooltip ?? trans('ui::delete.tooltip') }}"
     onclick="$('#modal-action-delete-{{ $id }}').modal('show')"
     class="btn btn-sm ui-btn-icon ui-btn-transparent">
