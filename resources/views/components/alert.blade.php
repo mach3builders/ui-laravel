@@ -1,7 +1,7 @@
 @php
     $message = session()->pull('alert.message');
-    $type = session()->pull('alert.type')
-    $icon = session()->pull('alert.icon')
+    $type = session()->pull('alert.type');
+    $icon = session()->pull('alert.icon');
 @endphp
 
 @if ($message)
